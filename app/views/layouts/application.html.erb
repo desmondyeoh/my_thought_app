@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="flash-box">
+  <% flash.each do |name, message| %>
+    <p class="flash-message"><%= message %></p>
+  <% end %>
+</div>
 <%= yield %>
-
+<%= debug(params) %>
 </body>
 </html>
